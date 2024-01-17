@@ -1,7 +1,10 @@
 import styled from 'styled-components';
-import Frame from './components/Frame';
+import Frame from './components/SliderView/Frame';
+import Content from './components/SliderView/Content';
 
-const Wrapper = styled.main`
+const Wrapper = styled.div`
+    position: relative;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,6 +17,7 @@ const Wrapper = styled.main`
 const App = () => (
   <Wrapper>
     <Frame />
+    <Content />
   </Wrapper>
 );
 

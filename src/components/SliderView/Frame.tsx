@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import frame from '../assets/frame.svg';
-import ellipse from '../assets/ellipse.svg';
-import verticalColouredBar from '../assets/vertical-coloured-bar.svg';
 
 const Wrapper = styled.div`
   position: relative;
@@ -39,23 +36,23 @@ const VerticalBar = styled.div`
 
 const EllipseWrapper = styled.div`
   position: absolute;
-
-  width: 100%;
-  height: 100%;
+  display: inline-block;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const Ellipse = styled.div`
-  width: 530px;
-  height: 530px;
+  width: 30vw;
+  height: 30vw;
+
+  max-width: 530px;
+  max-height: 530px;
+  min-width: 200px;
+  min-height: 200px;
 
   border: 1px solid rgba(66, 86, 122, .1);
   border-radius: 50%;
-`;
-
-const VerticalColouredBar = styled.img`
-  position: absolute;
-
-  height: 120px;
 `;
 
 const Frame = () => (
