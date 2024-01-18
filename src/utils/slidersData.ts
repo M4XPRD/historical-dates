@@ -1,4 +1,4 @@
-import { SliderData } from '../types/sliderDataTypes';
+import { SliderData } from '../types/sliderTypes';
 
 const slidersData: SliderData[] = [
   {
