@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import slidersData from '../../utils/slidersData';
 import formatSlidersCount from '../../utils/formatSlidersCount';
+import useSlider from '../../hooks/useSlider';
 
 const Wrapper = styled.section`
   display: flex;
@@ -32,19 +33,24 @@ const Button = styled.button`
   border-radius: 50%;
   border: 1px solid rgba(66, 86, 122, .1);
   background-color: transparent;
+
+  cursor: pointer;
 `;
 
 const SliderButtons = () => {
+  const { currentSlide, handleNextSlide, handlePreviousSlide } = useSlider();
+  const slidersLength = slidersData.length;
   const totalSliders = formatSlidersCount(slidersData.length);
+  const formattedCurrentSlide = formatSlidersCount(currentSlide);
 
   return (
     <Wrapper>
       <CurrentSlider>
-        {`${totalSliders}/${totalSliders}`}
+        {`${formattedCurrentSlide}/${totalSliders}`}
       </CurrentSlider>
       <ButtonsWrapper>
-        <Button type="button" />
-        <Button type="button" />
+        <Button type="button" onClick={handlePreviousSlide} disabled={currentSlide < slidersLength} />
+        <Button type="button" onClick={handleNextSlide} disabled={currentSlide >= slidersLength} />
       </ButtonsWrapper>
     </Wrapper>
   );

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import slidersData from '../../utils/slidersData';
+import useSlider from '../../hooks/useSlider';
 
 const Wrapper = styled.section`
   display: flex;
@@ -6,16 +8,17 @@ const Wrapper = styled.section`
   flex-direction: row;
   gap: 80px;
 
-  margin-left: 80px;
+  width: 100%;
 
-  max-width: 400px;
-  max-height: 135px;
+  margin-left: 80px;
 `;
 
 const EventWrapper = styled.article`
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  max-height: 135px;
 `;
 
 const CurrentYear = styled.div`
@@ -32,13 +35,23 @@ const Paragraph = styled.p`
   color: var(--colour-main);
 `;
 
-const Events = () => (
-  <Wrapper>
-    <EventWrapper>
-      <CurrentYear>2015</CurrentYear>
-      <Paragraph>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</Paragraph>
-    </EventWrapper>
-  </Wrapper>
-);
+const Events = () => {
+  const { currentSlide, currentCategory } = useSlider();
+  const currentSlideData = slidersData[currentSlide - 1];
+  const { years, categories } = currentSlideData;
+
+  const category = categories[currentCategory as keyof typeof categories];
+
+  return (
+    <Wrapper>
+      {years.map((year: number, index: number) => (
+        <EventWrapper key={years.indexOf(year)}>
+          <CurrentYear key={year}>{year}</CurrentYear>
+          <Paragraph key={category[index]}>{category[index]}</Paragraph>
+        </EventWrapper>
+      ))}
+    </Wrapper>
+  );
+};
 
 export default Events;

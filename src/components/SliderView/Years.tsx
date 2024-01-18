@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import slidersData from '../../utils/slidersData';
+import useSlider from '../../hooks/useSlider';
 
 const Wrapper = styled.section`
   display: flex;
@@ -24,11 +26,20 @@ const YearTo = styled.div`
   letter-spacing: -0.02em;
 `;
 
-const CurrentYears = () => (
-  <Wrapper>
-    <YearFrom>2015</YearFrom>
-    <YearTo>2022</YearTo>
-  </Wrapper>
-);
+const Years = () => {
+  const { currentSlide } = useSlider();
+  const currentSlideData = slidersData[currentSlide - 1];
+  const { years } = currentSlideData;
 
-export default CurrentYears;
+  const [firstYear] = years;
+  const lastYear = years[years.length - 1];
+
+  return (
+    <Wrapper>
+      <YearFrom>{firstYear}</YearFrom>
+      <YearTo>{lastYear}</YearTo>
+    </Wrapper>
+  );
+};
+
+export default Years;
