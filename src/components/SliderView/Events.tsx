@@ -5,6 +5,11 @@ const Wrapper = styled.section`
   align-self: flex-start;
   flex-direction: row;
   gap: 80px;
+
+  margin-left: 80px;
+
+  max-width: 400px;
+  max-height: 135px;
 `;
 
 const EventWrapper = styled.article`

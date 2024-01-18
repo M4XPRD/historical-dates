@@ -9,6 +9,7 @@ const Wrapper = styled.section`
   gap: 20px;
 
   margin-bottom: 56px;
+  margin-left: 80px;
 
   font-family: var(--font-family);
   color: var(--colour-main);
