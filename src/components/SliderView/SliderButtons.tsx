@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import slidersData from '../../utils/slidersData';
-import formatSlidersCount from '../../utils/formatSlidersCount';
-import useSlider from '../../hooks/useSlider';
+import { SliderButtonsTypes } from '../../types/sliderTypes';
 
 const Wrapper = styled.section`
   display: flex;
@@ -37,23 +35,23 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const SliderButtons = () => {
-  const { currentSlide, handleNextSlide, handlePreviousSlide } = useSlider();
-  const slidersLength = slidersData.length;
-  const totalSliders = formatSlidersCount(slidersData.length);
-  const formattedCurrentSlide = formatSlidersCount(currentSlide);
-
-  return (
-    <Wrapper>
-      <CurrentSlider>
-        {`${formattedCurrentSlide}/${totalSliders}`}
-      </CurrentSlider>
-      <ButtonsWrapper>
-        <Button type="button" onClick={handlePreviousSlide} disabled={currentSlide < slidersLength} />
-        <Button type="button" onClick={handleNextSlide} disabled={currentSlide >= slidersLength} />
-      </ButtonsWrapper>
-    </Wrapper>
-  );
-};
+const SliderButtons = ({
+  currentSlide,
+  handleNextSlide,
+  handlePreviousSlide,
+  slidersLength,
+  formattedCurrentSlide,
+  totalSliders,
+}: SliderButtonsTypes) => (
+  <Wrapper>
+    <CurrentSlider>
+      {`${formattedCurrentSlide}/${totalSliders}`}
+    </CurrentSlider>
+    <ButtonsWrapper>
+      <Button type="button" onClick={handlePreviousSlide} disabled={currentSlide < slidersLength} />
+      <Button type="button" onClick={handleNextSlide} disabled={currentSlide >= slidersLength} />
+    </ButtonsWrapper>
+  </Wrapper>
+);
 
 export default SliderButtons;
