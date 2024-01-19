@@ -1,15 +1,25 @@
 import styled from 'styled-components';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import {
+  Navigation,
+} from 'swiper/modules';
 import { EventsTypes } from '../../types/sliderTypes';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const Wrapper = styled.section`
+  box-sizing: border-box;
+
   display: flex;
   align-self: flex-start;
   flex-direction: row;
-  gap: 80px;
 
   width: 100%;
 
-  margin-left: 80px;
+  padding-left: 80px;
+  padding-right: 80px;
+
+  /* margin-bottom: 104px; */
 `;
 
 const EventWrapper = styled.article`
@@ -17,7 +27,10 @@ const EventWrapper = styled.article`
   flex-direction: column;
   gap: 15px;
 
+  max-width: 400px;
   max-height: 135px;
+
+  cursor: pointer;
 `;
 
 const CurrentYear = styled.div`
@@ -36,12 +49,21 @@ const Paragraph = styled.p`
 
 const Events = ({ years, category }: EventsTypes) => (
   <Wrapper>
-    {years.map((year: number, index: number) => (
-      <EventWrapper key={years.indexOf(year)}>
-        <CurrentYear key={year}>{year}</CurrentYear>
-        <Paragraph key={category[index]}>{category[index]}</Paragraph>
-      </EventWrapper>
-    ))}
+    <Swiper
+      modules={[Navigation]}
+      spaceBetween={10}
+      slidesPerView={3}
+      navigation
+    >
+      {years.map((year: number, index: number) => (
+        <SwiperSlide key={year + 22}>
+          <EventWrapper key={years.indexOf(year)}>
+            <CurrentYear key={year}>{year}</CurrentYear>
+            <Paragraph key={category[index]}>{category[index]}</Paragraph>
+          </EventWrapper>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   </Wrapper>
 );
 

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { SliderButtonsTypes } from '../../types/sliderTypes';
+import arrow from '../../assets/button-arrow.svg';
 
 const Wrapper = styled.section`
   display: flex;
@@ -7,8 +8,9 @@ const Wrapper = styled.section`
   align-self: flex-start;
   gap: 20px;
 
-  margin-bottom: 56px;
   margin-left: 80px;
+  margin-bottom: 56px;
+  margin-top: 137px;
 
   font-family: var(--font-family);
   color: var(--colour-main);
@@ -24,7 +26,16 @@ const ButtonsWrapper = styled.div`
   gap: 20px;
 `;
 
+const ButtonArrow = styled.img`
+  opacity: 1;
+  transition: opacity 0.3s ease;
+`;
+
 const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 50px;
   height: 50px;
 
@@ -33,6 +44,14 @@ const Button = styled.button`
   background-color: transparent;
 
   cursor: pointer;
+
+  &:disabled ${ButtonArrow} {
+    opacity: 0.5;
+  }
+
+  &:hover {
+    background-color: #FFFFFF;
+  }
 `;
 
 const SliderButtons = ({
@@ -48,8 +67,12 @@ const SliderButtons = ({
       {`${formattedCurrentSlide}/${totalSliders}`}
     </CurrentSlider>
     <ButtonsWrapper>
-      <Button type="button" onClick={handlePreviousSlide} disabled={currentSlide < slidersLength} />
-      <Button type="button" onClick={handleNextSlide} disabled={currentSlide >= slidersLength} />
+      <Button type="button" onClick={handlePreviousSlide} disabled={currentSlide < slidersLength}>
+        <ButtonArrow src={arrow} />
+      </Button>
+      <Button type="button" onClick={handleNextSlide} disabled={currentSlide >= slidersLength}>
+        <ButtonArrow src={arrow} style={{ transform: 'rotate(180deg)' }} />
+      </Button>
     </ButtonsWrapper>
   </Wrapper>
 );

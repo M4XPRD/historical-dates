@@ -6,12 +6,13 @@ const Wrapper = styled.div`
     position: relative;
 
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
-    
-    /* background-color: #FFFFFF; */
-    background-color: whitesmoke;
+
+    background-color: var(--colour-background);
     height: 100svh;
+
+    user-select: none;
   `;
 
 const App = () => (

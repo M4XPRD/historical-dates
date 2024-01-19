@@ -4,15 +4,15 @@ import { YearsTypes } from '../../types/sliderTypes';
 const Wrapper = styled.section`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 6rem;
 
   font-family: var(--font-family);
   font-size: var(--fs-l);
   font-weight: var(--fw-bold);
 
-  margin-right: 1.5rem;
-  margin-bottom: 137px;
-  margin-top: 96px;
+  max-height: 160px;
 `;
 
 const YearFrom = styled.div`

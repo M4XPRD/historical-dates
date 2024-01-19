@@ -12,7 +12,8 @@ const Wrapper = styled.div`
   margin-left: 12%;
   margin-right: 12%;
 
-  border: 1px solid rgba(66, 86, 122, .1);
+  border-left: 1px solid rgba(66, 86, 122, .1);
+  border-right: 1px solid rgba(66, 86, 122, .1);
 `;
 
 const UpperBlock = styled.div`
@@ -51,7 +52,7 @@ const Ellipse = styled.div`
   min-width: 200px;
   min-height: 200px;
 
-  border: 1px solid rgba(66, 86, 122, .1);
+  border: 1px solid rgba(66, 86, 122, .2);
   border-radius: 50%;
 `;
 
