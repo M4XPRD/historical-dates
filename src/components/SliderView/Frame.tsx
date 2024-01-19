@@ -44,13 +44,13 @@ const EllipseWrapper = styled.div`
 `;
 
 const Ellipse = styled.div`
-  width: 30vw;
-  height: 30vw;
+  width: 500px;
+  height: 500px;
 
-  max-width: 530px;
+  /* max-width: 530px;
   max-height: 530px;
   min-width: 200px;
-  min-height: 200px;
+  min-height: 200px; */
 
   border: 1px solid rgba(66, 86, 122, .2);
   border-radius: 50%;

@@ -6,13 +6,14 @@ const Wrapper = styled.section`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 6rem;
+  gap: 4rem;
 
   font-family: var(--font-family);
   font-size: var(--fs-l);
   font-weight: var(--fw-bold);
 
   max-height: 160px;
+  padding-right: 5px;
 `;
 
 const YearFrom = styled.div`

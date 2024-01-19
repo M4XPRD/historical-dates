@@ -8,8 +8,9 @@ const Wrapper = styled.section`
   align-items: center;
   gap: 78px;
 
-  margin-top: 170px;
-  margin-bottom: 96px;
+  margin-top: 61px;
+  /* margin-top: 170px;
+  margin-bottom: 96px; */
 `;
 
 const VerticalColouredBar = styled.img`
