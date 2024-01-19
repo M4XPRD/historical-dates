@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Title from './Title';
-import CurrentYears from './Years';
+import Years from './Years';
 import SliderButtons from './SliderButtons';
 import Events from './Events';
 import useSlider from '../../hooks/useSlider';
@@ -40,7 +40,7 @@ const Content = () => {
   return (
     <Wrapper>
       <Title />
-      <CurrentYears firstYear={firstYear} lastYear={lastYear} />
+      <Years firstYear={firstYear} lastYear={lastYear} />
       <SliderButtons
         currentSlide={currentSlide}
         handleNextSlide={handleNextSlide}
