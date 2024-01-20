@@ -53,6 +53,8 @@ const EllipseWrapper = styled.div`
 `;
 
 const Ellipse = styled.div`
+  /* box-sizing: border-box; */
+
   width: 500px;
   height: 500px;
 
@@ -68,6 +70,20 @@ const Line = styled.div`
   right: 0;
 `;
 
+const DotsContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
+const Dot = styled.div`
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--colour-main);
+  border-radius: 50%;
+`;
+
 const Years = ({ firstYear, lastYear }: YearsTypes) => (
   <Wrapper>
     <YearsWrapper>
@@ -76,6 +92,14 @@ const Years = ({ firstYear, lastYear }: YearsTypes) => (
     </YearsWrapper>
     <EllipseWrapper>
       <Ellipse>
+        <DotsContainer>
+          <Dot style={{ top: '49.4%', right: '-0.8%' }} />
+          <Dot style={{ top: '49.4%', left: '-0.8%' }} />
+          <Dot style={{ top: '3.2%', right: '69%' }} />
+          <Dot style={{ top: '3.2%', left: '69%' }} />
+          <Dot style={{ bottom: '3.2%', right: '69%' }} />
+          <Dot style={{ bottom: '3.2%', left: '69%' }} />
+        </DotsContainer>
         <Line />
       </Ellipse>
     </EllipseWrapper>
