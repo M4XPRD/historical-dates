@@ -14,6 +14,8 @@ const Wrapper = styled.section`
 
   font-family: var(--font-family);
   color: var(--colour-main);
+
+  z-index: 1;
 `;
 
 const CurrentSlider = styled.div`

@@ -20,7 +20,7 @@ const UpperBlock = styled.div`
   width: 100%;
   height: 45%;
 
-  border-bottom: 1px solid rgba(66, 86, 122, .1);
+  /* border-bottom: 1px solid rgba(66, 86, 122, .1); */
 `;
 
 const BottomBlock = styled.div`
@@ -35,35 +35,30 @@ const VerticalBar = styled.div`
   border-right: 1px solid rgba(66, 86, 122, .1);
 `;
 
-const EllipseWrapper = styled.div`
-  position: absolute;
-  display: inline-block;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
+// const EllipseWrapper = styled.div`
+//   position: absolute;
+//   display: inline-block;
+//   top: 45%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// `;
 
-const Ellipse = styled.div`
-  width: 500px;
-  height: 500px;
+// const Ellipse = styled.div`
+//   width: 500px;
+//   height: 500px;
 
-  /* max-width: 530px;
-  max-height: 530px;
-  min-width: 200px;
-  min-height: 200px; */
-
-  border: 1px solid rgba(66, 86, 122, .2);
-  border-radius: 50%;
-`;
+//   border: 1px solid rgba(66, 86, 122, .2);
+//   border-radius: 50%;
+// `;
 
 const Frame = () => (
   <Wrapper>
     <UpperBlock>
       <VerticalBar />
     </UpperBlock>
-    <EllipseWrapper>
+    {/* <EllipseWrapper>
       <Ellipse />
-    </EllipseWrapper>
+    </EllipseWrapper> */}
     <BottomBlock>
       <VerticalBar />
     </BottomBlock>

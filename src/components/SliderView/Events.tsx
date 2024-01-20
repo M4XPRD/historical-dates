@@ -18,8 +18,6 @@ const Wrapper = styled.section`
 
   padding-left: 80px;
   padding-right: 80px;
-
-  /* margin-bottom: 104px; */
 `;
 
 const EventWrapper = styled.article`
