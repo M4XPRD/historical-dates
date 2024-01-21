@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { YearsTypes } from '../../types/sliderTypes';
+import { YearsTypes, DotProps } from '../../types/sliderTypes';
 import dotsPositionMapping from '../../utils/dotsPositionsMapping';
-import { DotProps } from '../../types/dotPositionsTypes';
 
 const Wrapper = styled.section`
   display: flex;
@@ -79,6 +78,15 @@ const DotsContainer = styled.div`
   height: 100%;
 `;
 
+const DotText = styled.span`
+  position: absolute;
+  
+  padding-left: 8rem;
+
+  color: var(--colour-main);
+  font-size: var(--fs-xs);
+`;
+
 const Dot = styled.div<DotProps>`
   position: absolute;
 
@@ -86,13 +94,26 @@ const Dot = styled.div<DotProps>`
   align-items: center;
   justify-content: center;
 
+  ${DotText} {
+    display: none;
+  }
+
   width: 6px;
   height: 6px;
   background-color: var(--colour-main);
   border-radius: 50%;
   cursor: pointer;
   z-index: 100;
-  ${({ position }) => position};
+  ${({ $position }) => $position};
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+  }
 
   &.active,
   &:hover {
@@ -102,6 +123,10 @@ const Dot = styled.div<DotProps>`
     background-color: var(--colour-background);
     border: 1px solid var(--colour-dot);
     ${({ transform }) => `transform: ${transform.hoverTransform};`}
+
+    ${DotText} {
+      display: block;
+    }
 
     &:after {
       color: var(--colour-main);
@@ -124,10 +149,12 @@ const Years = ({ firstYear, lastYear }: YearsTypes) => (
             <Dot
               key={id}
               id={id}
-              position={position}
+              $position={position}
               transform={transform}
               className={id === 3 ? 'active' : ''}
-            />
+            >
+              <DotText>Test</DotText>
+            </Dot>
           ))}
         </DotsContainer>
         <Line />
