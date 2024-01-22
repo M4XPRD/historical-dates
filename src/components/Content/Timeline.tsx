@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Navigation,
 } from 'swiper/modules';
-import { EventsTypes } from '../../types/sliderTypes';
+import { TimelineProps } from '../../types/sliderTypes';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -15,6 +15,7 @@ const Wrapper = styled.section`
   flex-direction: row;
 
   width: 100%;
+  height: 135px;
 
   padding-left: 80px;
   padding-right: 80px;
@@ -26,7 +27,6 @@ const EventWrapper = styled.article`
   gap: 15px;
 
   max-width: 400px;
-  max-height: 135px;
 
   cursor: pointer;
 `;
@@ -45,7 +45,7 @@ const Paragraph = styled.p`
   color: var(--colour-main);
 `;
 
-const Events = ({ years, category }: EventsTypes) => (
+const Timeline = ({ years, category }: TimelineProps) => (
   <Wrapper>
     <Swiper
       modules={[Navigation]}
@@ -65,4 +65,4 @@ const Events = ({ years, category }: EventsTypes) => (
   </Wrapper>
 );
 
-export default Events;
+export default Timeline;

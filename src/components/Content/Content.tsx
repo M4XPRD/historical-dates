@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import Title from './Title';
-import Years from './Years';
 import SliderButtons from './SliderButtons';
-import Events from './Events';
+import Timeline from './Timeline';
 import useSlider from '../../hooks/useSlider';
 import slidersData, { categoriesMapping } from '../../utils/slidersData';
 import formatSlidersCount from '../../utils/formatSlidersCount';
+import DatesAndCategories from './DatesAndCategories';
 
 const Wrapper = styled.main`
   position: absolute;
@@ -43,7 +43,7 @@ const Content = () => {
   return (
     <Wrapper>
       <Title />
-      <Years
+      <DatesAndCategories
         firstYear={firstYear}
         lastYear={lastYear}
         currentCategoryID={currentCategoryID}
@@ -57,7 +57,7 @@ const Content = () => {
         formattedCurrentSlide={formattedCurrentSlide}
         totalSliders={totalSliders}
       />
-      <Events years={years} category={category} />
+      <Timeline years={years} category={category} />
     </Wrapper>
   );
 };

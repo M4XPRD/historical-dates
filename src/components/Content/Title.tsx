@@ -24,6 +24,16 @@ const TitleText = styled.div`
   font-size: var(--fs-m);
   font-weight: var(--fw-bold);
   color: var(--colour-main);
+
+  @media (max-width: 1500px) {
+    font-size: calc(var(--fs-m) - 0.5rem);
+    max-width: 300px;
+  }
+
+  @media (max-width: 1300px) {
+    font-size: calc(var(--fs-m) - 1rem);
+    max-width: 300px;
+  }
 `;
 
 const Title = () => (
