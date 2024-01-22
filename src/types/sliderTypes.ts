@@ -1,5 +1,5 @@
 export type CategoriesMapping = {
-  [key: number]: string,
+  [key: number | string]: string,
 };
 
 export type SliderData = {
