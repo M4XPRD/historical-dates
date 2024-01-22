@@ -57,11 +57,13 @@ const DotsContainer = styled.div`
 
 const DotText = styled.span`
   position: absolute;
-
-  padding-left: 8rem;
+  width: 100px;
+  padding-left: 194px;
 
   color: var(--colour-main);
   font-size: var(--fs-xs);
+
+  pointer-events: none;
 `;
 
 const Dot = styled.div<DotProps>`
