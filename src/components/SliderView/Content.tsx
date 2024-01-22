@@ -4,7 +4,7 @@ import Years from './Years';
 import SliderButtons from './SliderButtons';
 import Events from './Events';
 import useSlider from '../../hooks/useSlider';
-import slidersData from '../../utils/slidersData';
+import slidersData, { categoriesMapping } from '../../utils/slidersData';
 import formatSlidersCount from '../../utils/formatSlidersCount';
 
 const Wrapper = styled.main`
@@ -21,7 +21,6 @@ const Wrapper = styled.main`
 const Content = () => {
   const {
     currentSlide,
-    currentCategory,
     currentCategoryID,
     handleNextSlide,
     handlePreviousSlide,
@@ -35,7 +34,8 @@ const Content = () => {
   const formattedCurrentSlide = formatSlidersCount(currentSlide);
 
   const { years, categories } = currentSlideData;
-  const category = categories[currentCategory as keyof typeof categories];
+  const categoryKey = categoriesMapping[currentCategoryID] as 'movies' | 'literature' | 'science' | 'music' | 'sport' | 'theater';
+  const category = categories[categoryKey];
 
   const [firstYear] = years;
   const lastYear = years[years.length - 1];
