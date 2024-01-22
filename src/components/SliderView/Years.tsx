@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { YearsTypes, DotProps } from '../../types/sliderTypes';
 import dotsPositionMapping from '../../utils/dotsPositionsMapping';
+import { categoriesMapping } from '../../utils/slidersData';
 
 const Wrapper = styled.section`
   display: flex;
@@ -80,7 +81,7 @@ const DotsContainer = styled.div`
 
 const DotText = styled.span`
   position: absolute;
-  
+
   padding-left: 8rem;
 
   color: var(--colour-main);
@@ -107,7 +108,7 @@ const Dot = styled.div<DotProps>`
   ${({ $position }) => $position};
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: -20px;
     left: -20px;
@@ -136,7 +137,12 @@ const Dot = styled.div<DotProps>`
   }
 `;
 
-const Years = ({ firstYear, lastYear }: YearsTypes) => (
+const Years = ({
+  firstYear,
+  lastYear,
+  currentCategoryID,
+  handleNewCategoryID,
+}: YearsTypes) => (
   <Wrapper>
     <YearsWrapper>
       <YearFrom>{firstYear}</YearFrom>
@@ -151,9 +157,10 @@ const Years = ({ firstYear, lastYear }: YearsTypes) => (
               id={id}
               $position={position}
               transform={transform}
-              className={id === 3 ? 'active' : ''}
+              className={id === currentCategoryID ? 'active' : ''}
+              onClick={() => handleNewCategoryID(id)}
             >
-              <DotText>Test</DotText>
+              <DotText>{categoriesMapping[currentCategoryID]}</DotText>
             </Dot>
           ))}
         </DotsContainer>
