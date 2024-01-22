@@ -22,8 +22,10 @@ const Content = () => {
   const {
     currentSlide,
     currentCategory,
+    currentCategoryID,
     handleNextSlide,
     handlePreviousSlide,
+    handleNewCategoryID,
   } = useSlider();
 
   const currentSlideData = slidersData[currentSlide - 1];
@@ -41,7 +43,12 @@ const Content = () => {
   return (
     <Wrapper>
       <Title />
-      <Years firstYear={firstYear} lastYear={lastYear} />
+      <Years
+        firstYear={firstYear}
+        lastYear={lastYear}
+        currentCategoryID={currentCategoryID}
+        handleNewCategoryID={handleNewCategoryID}
+      />
       <SliderButtons
         currentSlide={currentSlide}
         handleNextSlide={handleNextSlide}
