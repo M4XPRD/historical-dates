@@ -1,4 +1,13 @@
-import { SliderData } from '../types/sliderTypes';
+import { CategoriesMapping, SliderData } from '../types/sliderTypes';
+
+export const categoriesMapping: CategoriesMapping = {
+  1: 'Кино',
+  2: 'Литература',
+  3: 'Наука',
+  4: 'Музыка',
+  5: 'Спорт',
+  6: 'Театр',
+};
 
 const slidersData: SliderData[] = [
   {
