@@ -1,6 +1,15 @@
 import { CategoriesMapping, SliderData } from '../types/sliderTypes';
 
 export const categoriesMapping: CategoriesMapping = {
+  1: 'movies',
+  2: 'literature',
+  3: 'science',
+  4: 'music',
+  5: 'sport',
+  6: 'theater',
+};
+
+export const categoriesNameMapping : CategoriesMapping = {
   1: 'Кино',
   2: 'Литература',
   3: 'Наука',
