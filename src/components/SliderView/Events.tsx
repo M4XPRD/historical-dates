@@ -54,7 +54,7 @@ const Events = ({ years, category }: EventsTypes) => (
       navigation
     >
       {years.map((year: number, index: number) => (
-        <SwiperSlide key={year + 22}>
+        <SwiperSlide key={`${years}_${years.indexOf(year)}`}>
           <EventWrapper key={years.indexOf(year)}>
             <CurrentYear key={year}>{year}</CurrentYear>
             <Paragraph key={category[index]}>{category[index]}</Paragraph>
