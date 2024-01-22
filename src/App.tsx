@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Frame from './components/Frame';
-import Content from './components/Content';
+import Frame from './components/Frame/Frame';
+import Content from './components/Content/Content';
 
 const Wrapper = styled.div`
     position: relative;

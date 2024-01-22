@@ -3,9 +3,9 @@ import Title from './Title';
 import Years from './Years';
 import SliderButtons from './SliderButtons';
 import Events from './Events';
-import useSlider from '../hooks/useSlider';
-import slidersData, { categoriesMapping } from '../utils/slidersData';
-import formatSlidersCount from '../utils/formatSlidersCount';
+import useSlider from '../../hooks/useSlider';
+import slidersData, { categoriesMapping } from '../../utils/slidersData';
+import formatSlidersCount from '../../utils/formatSlidersCount';
 
 const Wrapper = styled.main`
   position: absolute;

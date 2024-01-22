@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Navigation,
 } from 'swiper/modules';
-import { EventsTypes } from '../types/sliderTypes';
+import { EventsTypes } from '../../types/sliderTypes';
 import 'swiper/css';
 import 'swiper/css/navigation';
 

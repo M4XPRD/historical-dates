@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import verticalColouredBar from '../assets/vertical-coloured-bar.svg';
+import verticalColouredBar from '../../assets/vertical-coloured-bar.svg';
 
 const Wrapper = styled.section`
   display: flex;
