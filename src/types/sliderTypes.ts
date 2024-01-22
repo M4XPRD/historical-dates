@@ -1,3 +1,7 @@
+export type CategoriesMapping = {
+  [key: number]: string,
+};
+
 export type SliderData = {
   years: number[];
   categories: {
@@ -18,6 +22,8 @@ export type EventsTypes = {
 export type YearsTypes = {
   firstYear: number,
   lastYear: number,
+  currentCategoryID: number,
+  handleNewCategoryID: (newCategoryID: number) => void,
 };
 
 export type SliderButtonsTypes = {
