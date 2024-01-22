@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { YearsTypes, DotProps } from '../../types/sliderTypes';
 import dotsPositionMapping from '../../utils/dotsPositionsMapping';
-import { categoriesMapping } from '../../utils/slidersData';
+import { categoriesNameMapping } from '../../utils/slidersData';
 
 const Wrapper = styled.section`
   display: flex;
@@ -125,14 +125,16 @@ const Dot = styled.div<DotProps>`
     border: 1px solid var(--colour-dot);
     ${({ transform }) => `transform: ${transform.hoverTransform};`}
 
-    ${DotText} {
-      display: block;
-    }
-
     &:after {
       color: var(--colour-main);
       font-size: var(--fs-xs);
       content: ${({ id }) => `"${id}"`};
+    }
+
+    &.active {
+      ${DotText} {
+      display: block;
+    }
     }
   }
 `;
@@ -160,7 +162,7 @@ const Years = ({
               className={id === currentCategoryID ? 'active' : ''}
               onClick={() => handleNewCategoryID(id)}
             >
-              <DotText>{categoriesMapping[currentCategoryID]}</DotText>
+              <DotText>{categoriesNameMapping[currentCategoryID]}</DotText>
             </Dot>
           ))}
         </DotsContainer>
