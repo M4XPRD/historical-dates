@@ -14,19 +14,23 @@ export type SlidersData = {
   };
 };
 
-export type EventsTypes = {
+export type TimelineProps = {
   years: number[],
   category: string[],
 };
 
-export type YearsTypes = {
+export type DatesAndCategoriesProps = {
   firstYear: number,
   lastYear: number,
   currentCategoryID: number,
   handleNewCategoryID: (newCategoryID: number) => void,
 };
 
-export type SliderButtonsTypes = {
+export type YearsProps = Pick<DatesAndCategoriesProps, 'firstYear' | 'lastYear'>;
+
+export type CategorySelectionProps = Omit<DatesAndCategoriesProps, 'firstYear' | 'lastYear'>;
+
+export type SliderButtonsProps = {
   currentSlide: number,
   handleNextSlide: () => void,
   handlePreviousSlide: () => void,
