@@ -1,4 +1,4 @@
-import { CategoriesMapping, SliderData } from '../types/sliderTypes';
+import { CategoriesMapping, SlidersData } from '../types/sliderTypes';
 
 export const categoriesMapping: CategoriesMapping = {
   1: 'movies',
@@ -18,7 +18,7 @@ export const categoriesNameMapping : CategoriesMapping = {
   6: 'Театр',
 };
 
-const slidersData: SliderData[] = [
+const slidersData: SlidersData[] = [
   {
     years: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
     categories: {

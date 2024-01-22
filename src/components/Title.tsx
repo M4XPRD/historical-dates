@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import verticalColouredBar from '../../assets/vertical-coloured-bar.svg';
+import verticalColouredBar from '../assets/vertical-coloured-bar.svg';
 
 const Wrapper = styled.section`
   display: flex;
@@ -9,8 +9,6 @@ const Wrapper = styled.section`
   gap: 78px;
 
   margin-top: 61px;
-  /* margin-top: 170px;
-  margin-bottom: 96px; */
 `;
 
 const VerticalColouredBar = styled.img`

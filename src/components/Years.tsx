@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { YearsTypes, DotProps } from '../../types/sliderTypes';
-import dotsPositionMapping from '../../utils/dotsPositionsMapping';
-import { categoriesNameMapping } from '../../utils/slidersData';
+import { YearsTypes, DotProps } from '../types/sliderTypes';
+import dotsPositionMapping from '../utils/dotsPositionsMapping';
+import { categoriesNameMapping } from '../utils/slidersData';
 
 const Wrapper = styled.section`
   display: flex;

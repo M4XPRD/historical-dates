@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { SliderButtonsTypes } from '../../types/sliderTypes';
-import arrow from '../../assets/button-arrow.svg';
+import { SliderButtonsTypes } from '../types/sliderTypes';
+import arrow from '../assets/button-arrow.svg';
 
 const Wrapper = styled.section`
   display: flex;

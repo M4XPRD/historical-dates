@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Frame from './components/SliderView/Frame';
-import Content from './components/SliderView/Content';
+import Frame from './components/Frame';
+import Content from './components/Content';
 
 const Wrapper = styled.div`
     position: relative;

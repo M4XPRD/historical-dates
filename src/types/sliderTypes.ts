@@ -2,7 +2,7 @@ export type CategoriesMapping = {
   [key: number | string]: string,
 };
 
-export type SliderData = {
+export type SlidersData = {
   years: number[];
   categories: {
     movies: string[];
