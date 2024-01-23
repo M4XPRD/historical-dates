@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { YearsProps } from '../../types/sliderTypes';
 
-const YearsWrapper = styled.div`
+export const YearsWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 4rem;
@@ -24,7 +23,7 @@ const YearsWrapper = styled.div`
   }
 `;
 
-const YearFrom = styled.div`
+export const YearFrom = styled.div`
   display: flex;
   align-items: center;
   max-height: 160px;
@@ -32,19 +31,10 @@ const YearFrom = styled.div`
   color: var(--colour-date-from);
 `;
 
-const YearTo = styled.div`
+export const YearTo = styled.div`
   display: flex;
   align-items: center;
   max-height: 160px;
 
   color: var(--colour-date-to);
 `;
-
-const Years = ({ firstYear, lastYear }: YearsProps) => (
-  <YearsWrapper>
-    <YearFrom>{firstYear}</YearFrom>
-    <YearTo>{lastYear}</YearTo>
-  </YearsWrapper>
-);
-
-export default Years;

@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import { DatesAndCategoriesProps } from '../../types/sliderTypes';
-import CategorySelection from './CategorySelection';
-import Years from './Years';
 
 const Wrapper = styled.section`
   display: flex;
@@ -32,22 +29,4 @@ const Wrapper = styled.section`
   }
 `;
 
-const DatesAndCategories = ({
-  firstYear,
-  lastYear,
-  currentCategoryID,
-  handleNewCategoryID,
-}: DatesAndCategoriesProps) => (
-  <Wrapper>
-    <Years
-      firstYear={firstYear}
-      lastYear={lastYear}
-    />
-    <CategorySelection
-      currentCategoryID={currentCategoryID}
-      handleNewCategoryID={handleNewCategoryID}
-    />
-  </Wrapper>
-);
-
-export default DatesAndCategories;
+export default Wrapper;

@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-import { CategorySelectionProps, DotProps } from '../../types/sliderTypes';
-import dotsPositionMapping from '../../utils/dotsPositionsMapping';
-import { categoriesNameMapping } from '../../utils/slidersData';
+import { DotProps } from '../../../types/sliderTypes';
 
-const EllipseWrapper = styled.div`
+export const EllipseWrapper = styled.div`
   position: fixed;
 
   display: flex;
@@ -11,7 +9,7 @@ const EllipseWrapper = styled.div`
   width: 76%;
 `;
 
-const Ellipse = styled.div`
+export const Ellipse = styled.div`
   box-sizing: border-box;
 
   width: 500px;
@@ -41,7 +39,7 @@ const Ellipse = styled.div`
   }
 `;
 
-const Line = styled.div`
+export const Line = styled.div`
   position: absolute;
   width: 100%;
   border-bottom: 1px solid rgba(66, 86, 122, 0.1);
@@ -49,13 +47,13 @@ const Line = styled.div`
   right: 0;
 `;
 
-const DotsContainer = styled.div`
+export const DotsContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
 `;
 
-const DotText = styled.span`
+export const DotText = styled.span`
   position: absolute;
   width: 100px;
   padding-left: 194px;
@@ -66,7 +64,7 @@ const DotText = styled.span`
   pointer-events: none;
 `;
 
-const Dot = styled.div<DotProps>`
+export const Dot = styled.div<DotProps>`
   position: absolute;
 
   display: flex;
@@ -116,27 +114,3 @@ const Dot = styled.div<DotProps>`
     }
   }
 `;
-
-const CategorySelection = ({ currentCategoryID, handleNewCategoryID }: CategorySelectionProps) => (
-  <EllipseWrapper>
-    <Ellipse>
-      <DotsContainer>
-        {dotsPositionMapping.map(({ id, position, transform }) => (
-          <Dot
-            key={id}
-            id={id}
-            $position={position}
-            transform={transform}
-            className={id === currentCategoryID ? 'active' : ''}
-            onClick={() => handleNewCategoryID(id)}
-          >
-            <DotText>{categoriesNameMapping[currentCategoryID]}</DotText>
-          </Dot>
-        ))}
-      </DotsContainer>
-      <Line />
-    </Ellipse>
-  </EllipseWrapper>
-);
-
-export default CategorySelection;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Frame from './components/Frame/Frame';
-import Content from './components/Content/Content';
+import AppContent from './components/Content/AppContent/AppContent';
 
 const Wrapper = styled.div`
     position: relative;
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 const App = () => (
   <Wrapper>
     <Frame />
-    <Content />
+    <AppContent />
   </Wrapper>
 );
 
