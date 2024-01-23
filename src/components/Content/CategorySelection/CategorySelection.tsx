@@ -5,16 +5,25 @@ import { CategorySelectionProps } from '../../../types/sliderTypes';
 import dotsPositionMapping from '../../../utils/dotsPositionsMapping';
 import { categoriesNameMapping } from '../../../utils/slidersData';
 import {
-  EllipseWrapper, Ellipse, DotsContainer, Dot, DotText, Line,
+  EllipseWrapper,
+  Ellipse,
+  DotsContainer,
+  Dot,
+  DotText,
+  Line,
 } from './CategorySelection.styled';
 
-const CategorySelection = ({ currentCategoryID, handleNewCategoryID }: CategorySelectionProps) => {
+const CategorySelection = ({
+  currentCategoryID,
+  handleNewCategoryID,
+}: CategorySelectionProps) => {
   const dotsContainerRef = useRef(null);
   const { contextSafe } = useGSAP({ scope: dotsContainerRef });
 
   const updateDotsAngles = (angleRotated: number) => {
     dotsPositionMapping.forEach((dot) => {
       dot.angle = (dot.angle - angleRotated + 360) % 360;
+      dot.currentRotation = (dot.currentRotation - angleRotated + 360) % 360;
     });
   };
 
@@ -52,21 +61,24 @@ const CategorySelection = ({ currentCategoryID, handleNewCategoryID }: CategoryS
       <Ellipse>
         <DotsContainer ref={dotsContainerRef}>
           {dotsPositionMapping.map(({
-            id, position, transform, angle,
+            id, position, transform, angle, currentRotation,
           }) => (
             <Dot
               key={id}
               id={id}
               $position={position}
               data-angle={angle}
-              transform={transform}
+              transform={{ ...transform, hoverTransform: `${transform.hoverTransform} rotate(${currentRotation}deg)` }}
               className={id === currentCategoryID ? 'active' : ''}
               onClick={() => handleDotClick(id)}
             >
-              <DotText>{categoriesNameMapping[currentCategoryID]}</DotText>
+              <DotText>
+                {categoriesNameMapping[currentCategoryID]}
+              </DotText>
             </Dot>
           ))}
         </DotsContainer>
+
         <Line />
       </Ellipse>
     </EllipseWrapper>
