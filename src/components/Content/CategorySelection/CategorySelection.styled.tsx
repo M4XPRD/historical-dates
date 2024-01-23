@@ -64,6 +64,24 @@ export const DotText = styled.span`
   pointer-events: none;
 `;
 
+export const DotCircle = styled.div`
+  display: none;
+
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 56px;
+  height: 56px; 
+
+  background-color: var(--colour-background);
+  border: 1px solid var(--colour-dot);
+  border-radius: 50%;
+
+  z-index: 100;
+`;
+
 export const Dot = styled.div<DotProps>`
   position: absolute;
 
@@ -91,26 +109,32 @@ export const Dot = styled.div<DotProps>`
     right: -20px;
     bottom: -20px;
   }
+  
+  &:hover,
+  &.active {
+    ${({ transform }) => `transform: ${transform.hoverTransform};`}
+  }
 
-  &.active,
-  &:hover {
-    box-sizing: border-box;
+  &:hover ${DotCircle}, 
+  &.active ${DotCircle} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 56px;
     height: 56px;
+
     background-color: var(--colour-background);
     border: 1px solid var(--colour-dot);
-    ${({ transform }) => `transform: ${transform.hoverTransform};`}
+    font-size: var(--fs-xs);
+    color: var(--colour-main);
 
-    &:after {
-      color: var(--colour-main);
-      font-size: var(--fs-xs);
-      content: ${({ id }) => `"${id}"`};
-    }
+    transform: translate(-50%, -50%);
+  }
 
-    &.active {
-      ${DotText} {
+  &.active {
+    ${DotText} {
       display: block;
-    }
     }
   }
 `;

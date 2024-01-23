@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
@@ -11,6 +12,7 @@ import {
   Dot,
   DotText,
   Line,
+  DotCircle,
 } from './CategorySelection.styled';
 
 const CategorySelection = ({
@@ -65,13 +67,15 @@ const CategorySelection = ({
           }) => (
             <Dot
               key={id}
-              id={id}
+              transform={{ ...transform, hoverTransform: `${transform.hoverTransform} rotate(${currentRotation}deg)` }}
               $position={position}
               data-angle={angle}
-              transform={{ ...transform, hoverTransform: `${transform.hoverTransform} rotate(${currentRotation}deg)` }}
               className={id === currentCategoryID ? 'active' : ''}
               onClick={() => handleDotClick(id)}
             >
+              <DotCircle>
+                {id}
+              </DotCircle>
               <DotText>
                 {categoriesNameMapping[currentCategoryID]}
               </DotText>
