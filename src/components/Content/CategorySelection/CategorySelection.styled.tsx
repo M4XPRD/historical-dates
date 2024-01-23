@@ -130,6 +130,8 @@ export const Dot = styled.div<DotProps>`
     color: var(--colour-main);
 
     transform: translate(-50%, -50%);
+
+    opacity: 1;
   }
 
   &.active {

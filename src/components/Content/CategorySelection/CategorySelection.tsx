@@ -63,11 +63,11 @@ const CategorySelection = ({
       <Ellipse>
         <DotsContainer ref={dotsContainerRef}>
           {dotsPositionMapping.map(({
-            id, position, transform, angle, currentRotation,
+            id, position, angle, currentRotation,
           }) => (
             <Dot
               key={id}
-              transform={{ ...transform, hoverTransform: `${transform.hoverTransform} rotate(${currentRotation}deg)` }}
+              transform={{ hoverTransform: `rotate(${currentRotation}deg)` }}
               $position={position}
               data-angle={angle}
               className={id === currentCategoryID ? 'active' : ''}
