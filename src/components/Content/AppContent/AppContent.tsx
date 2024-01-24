@@ -6,6 +6,7 @@ import slidersData, { categoriesMapping } from '../../../utils/slidersData';
 import formatSlidersCount from '../../../utils/formatSlidersCount';
 import DatesAndCategories from '../DatesAndCategories/DatesAndCategories';
 import Wrapper from './AppContent.styled';
+import { CategoryKeys } from '../../../types/sliderTypes';
 
 const AppContent = () => {
   const {
@@ -23,7 +24,7 @@ const AppContent = () => {
   const formattedCurrentSlide = formatSlidersCount(currentSlide);
 
   const { years, categories } = currentSlideData;
-  const categoryKey = categoriesMapping[currentCategoryID] as 'movies' | 'literature' | 'science' | 'music' | 'sport' | 'theater';
+  const categoryKey = categoriesMapping[currentCategoryID] as CategoryKeys;
   const category = categories[categoryKey];
 
   const [firstYear] = years;
