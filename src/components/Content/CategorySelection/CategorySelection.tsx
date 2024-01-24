@@ -49,7 +49,7 @@ const CategorySelection = ({
         rotation: `+=${angleToRotate}`,
         duration: 0.5,
         ease: 'power2.inOut',
-        onComplete: () => {
+        onStart: () => {
           handleNewCategoryID(id);
           updateDotsAngles(angleToRotate);
         },
