@@ -4,7 +4,7 @@ import SliderLogicContext from './SliderLogicContext';
 
 const SliderLogicProvider = ({ children }: ProviderProps) => {
   const [currentSlide, setCurrentSlide] = useState<number>(1);
-  const [previousSlide, setPreviousSlide] = useState<number>(0);
+  const [previousSlide, setPreviousSlide] = useState<number>(1);
   const [currentCategoryID, setCurrentCategoryID] = useState<number>(1);
 
   const handleNextSlide = () => {
