@@ -3,7 +3,7 @@ export type CategoriesMapping = {
 };
 
 export type SlidersData = {
-  period: { from: number, to: number };
+  period: { startingYear: number, endingYear: number };
   years: number[];
   categories: {
     movies: string[];
@@ -23,15 +23,15 @@ export type TimelineProps = {
 };
 
 export type DatesAndCategoriesProps = {
-  firstYear: number,
-  lastYear: number,
+  startingYear: number,
+  endingYear: number,
   currentCategoryID: number,
   handleNewCategoryID: (newCategoryID: number) => void,
 };
 
-export type YearsProps = Pick<DatesAndCategoriesProps, 'firstYear' | 'lastYear'>;
+export type YearsProps = Pick<DatesAndCategoriesProps, 'startingYear' | 'endingYear'>;
 
-export type CategorySelectionProps = Omit<DatesAndCategoriesProps, 'firstYear' | 'lastYear'>;
+export type CategorySelectionProps = Omit<DatesAndCategoriesProps, 'startingYear' | 'endingYear'>;
 
 export type SliderButtonsProps = {
   currentSlide: number,
