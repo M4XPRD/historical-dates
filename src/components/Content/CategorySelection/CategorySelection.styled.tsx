@@ -65,21 +65,29 @@ export const DotText = styled.span`
 `;
 
 export const DotCircle = styled.div`
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   box-sizing: border-box;
   position: absolute;
   top: 50%;
   left: 50%;
 
-  width: 56px;
-  height: 56px; 
+  width: 6px;
+  height: 6px;
 
-  background-color: var(--colour-background);
+  background-color: var(--colour-main);
   border: 1px solid var(--colour-dot);
   border-radius: 50%;
 
+  transform: translate(-50%, -50%);
+
   z-index: 100;
+
+  &:before {
+    content: none;
+  }
 `;
 
 export const Dot = styled.div<DotProps>`
@@ -109,18 +117,13 @@ export const Dot = styled.div<DotProps>`
     right: -20px;
     bottom: -20px;
   }
-  
+
   &:hover,
   &.active {
     ${({ transform }) => `transform: ${transform.hoverTransform};`}
   }
 
-  &:hover ${DotCircle}, 
-  &.active ${DotCircle} {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+  &:hover ${DotCircle}, &.active ${DotCircle} {
     width: 56px;
     height: 56px;
 
@@ -131,7 +134,10 @@ export const Dot = styled.div<DotProps>`
 
     transform: translate(-50%, -50%);
 
-    opacity: 1;
+    &:before {
+      content: ${({ id }) => `'${id}'`};
+      font-size: var(--fs-xs);
+    }
   }
 
   &.active {

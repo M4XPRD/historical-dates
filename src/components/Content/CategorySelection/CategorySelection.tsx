@@ -67,15 +67,14 @@ const CategorySelection = ({
           }) => (
             <Dot
               key={id}
+              id={id}
               transform={{ hoverTransform: `rotate(${currentRotation}deg)` }}
               $position={position}
               data-angle={angle}
               className={id === currentCategoryID ? 'active' : ''}
               onClick={() => handleDotClick(id)}
             >
-              <DotCircle>
-                {id}
-              </DotCircle>
+              <DotCircle />
               <DotText>
                 {categoriesNameMapping[currentCategoryID]}
               </DotText>
