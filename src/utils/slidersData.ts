@@ -20,6 +20,7 @@ export const categoriesNameMapping : CategoriesMapping = {
 
 const slidersData: SlidersData[] = [
   {
+    period: { startingYear: 2008, endingYear: 2015 },
     years: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
     categories: {
       movies: [
@@ -85,6 +86,7 @@ const slidersData: SlidersData[] = [
     },
   },
   {
+    period: { startingYear: 2016, endingYear: 2023 },
     years: [2016, 2017, 2018, 2019, 2020, 2021, 2023],
     categories: {
       movies: [
