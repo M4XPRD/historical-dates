@@ -4,13 +4,16 @@ import SliderLogicContext from './SliderLogicContext';
 
 const SliderLogicProvider = ({ children }: ProviderProps) => {
   const [currentSlide, setCurrentSlide] = useState<number>(1);
+  const [previousSlide, setPreviousSlide] = useState<number>(0);
   const [currentCategoryID, setCurrentCategoryID] = useState<number>(1);
 
   const handleNextSlide = () => {
+    setPreviousSlide(currentSlide);
     setCurrentSlide((current) => current + 1);
   };
 
   const handlePreviousSlide = () => {
+    setPreviousSlide(currentSlide);
     setCurrentSlide((current) => current - 1);
   };
 
@@ -22,6 +25,7 @@ const SliderLogicProvider = ({ children }: ProviderProps) => {
     () => ({
       currentSlide,
       currentCategoryID,
+      previousSlide,
       handleNewCategoryID,
       handleNextSlide,
       handlePreviousSlide,
@@ -29,6 +33,7 @@ const SliderLogicProvider = ({ children }: ProviderProps) => {
     [
       currentSlide,
       currentCategoryID,
+      previousSlide,
       handleNewCategoryID,
       handleNextSlide,
       handlePreviousSlide,

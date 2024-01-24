@@ -3,8 +3,9 @@ import { SliderContextTypes } from '../types/contextTypes';
 
 const defaultValues = {
   currentSlide: 1,
-  currentCategory: 'movies',
-  handleNewCategory: () => {},
+  previousSlide: 0,
+  currentCategoryID: 1,
+  handleNewCategoryID: () => {},
   handleNextSlide: () => {},
   handlePreviousSlide: () => {},
 };
