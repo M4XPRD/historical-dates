@@ -113,10 +113,7 @@ export const Dot = styled.div<DotProps>`
   cursor: pointer;
   transition: width 0.3s ease-in, height 0.3s ease-in;
   z-index: 100;
-  
-  ${DotText} {
-    display: none;
-  }
+
   &::before {
     content: '';
     position: absolute;
@@ -153,9 +150,15 @@ export const Dot = styled.div<DotProps>`
     background-color: var(--colour-background);
   }
 
+  ${DotText} {
+    opacity: 0
+  }
+
   &.active {
     ${DotText} {
-      display: block;
+      opacity: 1;
+      transition: opacity 0.3s ease-in;
+      transition-delay: 0.4s;
     }
   }
 `;
