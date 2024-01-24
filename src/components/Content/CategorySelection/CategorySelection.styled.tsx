@@ -45,6 +45,8 @@ export const Line = styled.div`
   border-bottom: 1px solid rgba(66, 86, 122, 0.1);
   top: 50%;
   right: 0;
+
+  z-index: -1;
 `;
 
 export const DotsContainer = styled.div`
