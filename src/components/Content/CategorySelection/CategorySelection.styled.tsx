@@ -81,7 +81,12 @@ export const DotCircle = styled.div`
   border: 1px solid var(--colour-dot);
   border-radius: 50%;
 
+  font-size: var(--fs-xs);
+  color: var(--colour-main);
+  
+  opacity: 0;
   transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in;
 
   z-index: 100;
 
@@ -96,19 +101,20 @@ export const Dot = styled.div<DotProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  ${DotText} {
-    display: none;
-  }
-
+  
+  ${({ $position }) => $position};
   width: 6px;
   height: 6px;
   background-color: var(--colour-main);
   border-radius: 50%;
-  cursor: pointer;
-  z-index: 100;
-  ${({ $position }) => $position};
 
+  cursor: pointer;
+  transition: width 0.3s ease-in, height 0.3s ease-in;
+  z-index: 100;
+  
+  ${DotText} {
+    display: none;
+  }
   &::before {
     content: '';
     position: absolute;
@@ -129,15 +135,20 @@ export const Dot = styled.div<DotProps>`
 
     background-color: var(--colour-background);
     border: 1px solid var(--colour-dot);
-    font-size: var(--fs-xs);
-    color: var(--colour-main);
 
+    opacity: 1;
     transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in;
 
-    &:before {
+    &:after {
       content: ${({ id }) => `'${id}'`};
       font-size: var(--fs-xs);
+      color: var(--colour-main);
     }
+  }
+
+  &:hover, &.active {
+    background-color: var(--colour-background);
   }
 
   &.active {
