@@ -3,6 +3,7 @@ export type CategoriesMapping = {
 };
 
 export type SlidersData = {
+  period: { from: number, to: number };
   years: number[];
   categories: {
     movies: string[];
@@ -13,6 +14,8 @@ export type SlidersData = {
     theater: string[];
   };
 };
+
+export type CategoryKeys = 'movies' | 'literature' | 'science' | 'music' | 'sport' | 'theater';
 
 export type TimelineProps = {
   years: number[],
