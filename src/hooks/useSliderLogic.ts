@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import SliderLogicContext from '../contexts/SliderLogicContext';
 
-const useSlider = () => useContext(SliderLogicContext);
+const useSliderLogic = () => useContext(SliderLogicContext);
 
-export default useSlider;
+export default useSliderLogic;
