@@ -4,15 +4,15 @@ import Years from '../Years/Years';
 import Wrapper from './DatesAndCategories.styled';
 
 const DatesAndCategories = ({
-  firstYear,
-  lastYear,
+  startingYear,
+  endingYear,
   currentCategoryID,
   handleNewCategoryID,
 }: DatesAndCategoriesProps) => (
   <Wrapper>
     <Years
-      firstYear={firstYear}
-      lastYear={lastYear}
+      startingYear={startingYear}
+      endingYear={endingYear}
     />
     <CategorySelection
       currentCategoryID={currentCategoryID}

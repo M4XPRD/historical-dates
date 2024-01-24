@@ -1,7 +1,7 @@
 import Title from '../Title/Title';
 import SliderButtons from '../SliderButtons/SliderButtons';
 import Timeline from '../Timeline/Timeline';
-import useSlider from '../../../hooks/useSlider';
+import useSliderLogic from '../../../hooks/useSliderLogic';
 import slidersData, { categoriesMapping } from '../../../utils/slidersData';
 import formatSlidersCount from '../../../utils/formatSlidersCount';
 import DatesAndCategories from '../DatesAndCategories/DatesAndCategories';
@@ -15,7 +15,7 @@ const AppContent = () => {
     handleNextSlide,
     handlePreviousSlide,
     handleNewCategoryID,
-  } = useSlider();
+  } = useSliderLogic();
 
   const currentSlideData = slidersData[currentSlide - 1];
 
@@ -23,19 +23,18 @@ const AppContent = () => {
   const totalSliders = formatSlidersCount(slidersLength);
   const formattedCurrentSlide = formatSlidersCount(currentSlide);
 
-  const { years, categories } = currentSlideData;
+  const { years, categories, period } = currentSlideData;
   const categoryKey = categoriesMapping[currentCategoryID] as CategoryKeys;
   const category = categories[categoryKey];
 
-  const [firstYear] = years;
-  const lastYear = years[years.length - 1];
+  const { startingYear, endingYear } = period;
 
   return (
     <Wrapper>
       <Title />
       <DatesAndCategories
-        firstYear={firstYear}
-        lastYear={lastYear}
+        startingYear={startingYear}
+        endingYear={endingYear}
         currentCategoryID={currentCategoryID}
         handleNewCategoryID={handleNewCategoryID}
       />
