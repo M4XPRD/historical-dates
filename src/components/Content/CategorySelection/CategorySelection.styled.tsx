@@ -101,13 +101,14 @@ export const Dot = styled.div<DotProps>`
   justify-content: center;
 
   ${({ $position }) => $position};
+  ${({ transform }) => `transform: ${transform.hoverTransform};`}
   width: 6px;
   height: 6px;
   background-color: var(--colour-main);
   border-radius: 50%;
 
   cursor: pointer;
-  transition: width 0.3s ease-in, height 0.3s ease-in;
+  transition: all 0.3s ease-in;
   z-index: 100;
 
   &::before {
@@ -117,11 +118,6 @@ export const Dot = styled.div<DotProps>`
     left: -20px;
     right: -20px;
     bottom: -20px;
-  }
-
-  &:hover,
-  &.active {
-    ${({ transform }) => `transform: ${transform.hoverTransform};`}
   }
 
   &:hover ${DotCircle}, &.active ${DotCircle} {
