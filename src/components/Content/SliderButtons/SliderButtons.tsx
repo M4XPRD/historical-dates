@@ -17,7 +17,7 @@ const SliderButtons = ({
       {`${formattedCurrentSlide}/${totalSliders}`}
     </CurrentSlider>
     <ButtonsWrapper>
-      <Button type="button" onClick={handlePreviousSlide} disabled={currentSlide < slidersLength}>
+      <Button type="button" onClick={handlePreviousSlide} disabled={currentSlide === 1}>
         <ButtonArrow src={arrow} />
       </Button>
       <Button type="button" onClick={handleNextSlide} disabled={currentSlide >= slidersLength}>
