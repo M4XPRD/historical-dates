@@ -18,11 +18,19 @@ const Years = ({ startingYear, endingYear }: YearsProps) => {
   const endingYearRef = useRef(null);
 
   useEffect(() => {
-    const animateYears = (ref: React.RefObject<HTMLElement>, fromYear: number, toYear: number) => {
+    const animateYears = (
+      ref: React.RefObject<HTMLElement>,
+      fromYear: number,
+      toYear: number,
+    ) => {
       const timeline = gsap.timeline({ defaults: { ease: 'none' } });
       const step = fromYear < toYear ? 1 : -1;
 
-      for (let year = fromYear; step > 0 ? year <= toYear : year >= toYear; year += step) {
+      for (
+        let year = fromYear;
+        step > 0 ? year <= toYear : year >= toYear;
+        year += step
+      ) {
         timeline.to(ref.current, {
           duration: 0.05,
           text: String(year),
@@ -31,11 +39,25 @@ const Years = ({ startingYear, endingYear }: YearsProps) => {
       return timeline;
     };
 
-    const startTimeline = animateYears(startingYearRef, previousStartingYear, startingYear);
-    const endTimeline = animateYears(endingYearRef, previousEndingYear, endingYear);
+    const startTimeline = animateYears(
+      startingYearRef,
+      previousStartingYear,
+      startingYear,
+    );
+    const endTimeline = animateYears(
+      endingYearRef,
+      previousEndingYear,
+      endingYear,
+    );
 
     gsap.timeline().add(startTimeline, 0).add(endTimeline, 0);
-  }, [currentSlide, startingYear, endingYear, previousStartingYear, previousEndingYear]);
+  }, [
+    currentSlide,
+    startingYear,
+    endingYear,
+    previousStartingYear,
+    previousEndingYear,
+  ]);
 
   return (
     <YearsWrapper>

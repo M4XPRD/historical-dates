@@ -85,7 +85,7 @@ export const DotCircle = styled.div`
 
   font-size: var(--fs-xs);
   color: var(--colour-main);
-  
+
   opacity: 0;
   transform: translate(-50%, -50%);
   transition: all 0.3s ease-in;
@@ -103,7 +103,7 @@ export const Dot = styled.div<DotProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   ${({ $position }) => $position};
   width: 6px;
   height: 6px;
@@ -146,12 +146,13 @@ export const Dot = styled.div<DotProps>`
     }
   }
 
-  &:hover, &.active {
+  &:hover,
+  &.active {
     background-color: var(--colour-background);
   }
 
   ${DotText} {
-    opacity: 0
+    opacity: 0;
   }
 
   &.active {

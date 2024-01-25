@@ -1,12 +1,13 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {
-  Navigation,
-} from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import { TimelineProps } from '../../../types/sliderTypes';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import {
-  Wrapper, EventWrapper, CurrentYear, Paragraph,
+  Wrapper,
+  EventWrapper,
+  CurrentYear,
+  Paragraph,
 } from './Timeline.styled';
 
 const Timeline = ({ years, category }: TimelineProps) => (

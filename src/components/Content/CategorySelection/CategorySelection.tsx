@@ -45,24 +45,24 @@ const CategorySelection = ({
     <EllipseWrapper>
       <Ellipse>
         <DotsContainer ref={dotsContainerRef}>
-          {dotsPositionMapping.map(({
-            id, position, angle, currentRotation,
-          }) => (
-            <Dot
-              key={id}
-              id={id}
-              transform={{ hoverTransform: `rotate(${currentRotation}deg)` }}
-              $position={position}
-              data-angle={angle}
-              className={id === currentCategoryID ? 'active' : ''}
-              onClick={() => handleDotClick(id)}
-            >
-              <DotCircle />
-              <DotText>
-                {categoriesNameMapping[currentCategoryID]}
-              </DotText>
-            </Dot>
-          ))}
+          {dotsPositionMapping.map(
+            ({
+              id, position, angle, currentRotation,
+            }) => (
+              <Dot
+                key={id}
+                id={id}
+                transform={{ hoverTransform: `rotate(${currentRotation}deg)` }}
+                $position={position}
+                data-angle={angle}
+                className={id === currentCategoryID ? 'active' : ''}
+                onClick={() => handleDotClick(id)}
+              >
+                <DotCircle />
+                <DotText>{categoriesNameMapping[currentCategoryID]}</DotText>
+              </Dot>
+            ),
+          )}
         </DotsContainer>
 
         <Line />

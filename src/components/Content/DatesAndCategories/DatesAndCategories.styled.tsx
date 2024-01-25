@@ -11,7 +11,7 @@ const Wrapper = styled.section`
   font-weight: var(--fw-bold);
 
   max-height: 160px;
-  
+
   @media (max-width: 1700px) {
     font-size: calc(var(--fs-l) - 1rem);
   }

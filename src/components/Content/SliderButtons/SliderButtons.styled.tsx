@@ -38,7 +38,7 @@ export const Button = styled.button`
   height: 50px;
 
   border-radius: 50%;
-  border: 1px solid rgba(66, 86, 122, .1);
+  border: 1px solid rgba(66, 86, 122, 0.1);
   background-color: transparent;
 
   cursor: pointer;
@@ -48,6 +48,6 @@ export const Button = styled.button`
   }
 
   &:hover {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
 `;

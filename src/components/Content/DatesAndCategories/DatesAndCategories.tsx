@@ -10,10 +10,7 @@ const DatesAndCategories = ({
   handleNewCategoryID,
 }: DatesAndCategoriesProps) => (
   <Wrapper>
-    <Years
-      startingYear={startingYear}
-      endingYear={endingYear}
-    />
+    <Years startingYear={startingYear} endingYear={endingYear} />
     <CategorySelection
       currentCategoryID={currentCategoryID}
       handleNewCategoryID={handleNewCategoryID}
