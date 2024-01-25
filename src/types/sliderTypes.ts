@@ -42,7 +42,6 @@ export type SliderButtonsProps = {
   totalSliders: string,
 };
 export type DotProps = {
-  id: number,
   $position: {
     top?: string;
     right?: string;

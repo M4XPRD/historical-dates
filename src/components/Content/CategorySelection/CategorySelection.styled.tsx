@@ -91,10 +91,6 @@ export const DotCircle = styled.div`
   transition: all 0.3s ease-in;
 
   z-index: 100;
-
-  &:before {
-    content: none;
-  }
 `;
 
 export const Dot = styled.div<DotProps>`
@@ -138,12 +134,6 @@ export const Dot = styled.div<DotProps>`
     opacity: 1;
     transform: translate(-50%, -50%);
     transition: all 0.3s ease-in;
-
-    &:after {
-      content: ${({ id }) => `'${id}'`};
-      font-size: var(--fs-xs);
-      color: var(--colour-main);
-    }
   }
 
   &:hover,
