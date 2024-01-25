@@ -12,8 +12,8 @@ export const EllipseWrapper = styled.div`
 export const Ellipse = styled.div`
   box-sizing: border-box;
 
-  width: 500px;
-  height: 500px;
+  width: 530px;
+  height: 530px;
 
   border: 1px solid rgba(66, 86, 122, 0.2);
   border-radius: 50%;
