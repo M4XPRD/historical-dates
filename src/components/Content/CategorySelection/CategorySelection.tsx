@@ -13,6 +13,8 @@ import {
   Line,
   DotCircle,
 } from './CategorySelection.styled';
+import calculateRotation from '../../../utils/calculateRotation';
+import updateDotsAngles from '../../../utils/updateDotsAngles';
 
 const CategorySelection = ({
   currentCategoryID,
@@ -21,40 +23,22 @@ const CategorySelection = ({
   const dotsContainerRef = useRef(null);
   const { contextSafe } = useGSAP({ scope: dotsContainerRef });
 
-  const updateDotsAngles = (angleRotated: number) => {
-    dotsPositionMapping.forEach((dot) => {
-      dot.angle = (dot.angle - angleRotated + 360) % 360;
-      dot.currentRotation = (dot.currentRotation - angleRotated + 360) % 360;
-    });
-  };
-
   const handleDotClick = contextSafe((id: number) => {
     if (id === currentCategoryID) {
       return;
     }
 
-    const targetDot = dotsPositionMapping.find((dot) => dot.id === id);
-    const currentDotAngle = 60;
-    const targetAngle = targetDot?.angle;
+    const angleToRotate = calculateRotation(id);
 
-    if (targetAngle !== undefined) {
-      let angleToRotate = targetAngle - currentDotAngle;
-      if (angleToRotate < -180) {
-        angleToRotate += 360;
-      } else if (angleToRotate > 180) {
-        angleToRotate -= 360;
-      }
-
-      gsap.to(dotsContainerRef.current, {
-        rotation: `+=${angleToRotate}`,
-        duration: 0.5,
-        ease: 'power2.inOut',
-        onStart: () => {
-          handleNewCategoryID(id);
-          updateDotsAngles(angleToRotate);
-        },
-      });
-    }
+    gsap.to(dotsContainerRef.current, {
+      rotation: `+=${angleToRotate}`,
+      duration: 0.5,
+      ease: 'power2.inOut',
+      onStart: () => {
+        handleNewCategoryID(id);
+        updateDotsAngles(angleToRotate);
+      },
+    });
   });
 
   return (
