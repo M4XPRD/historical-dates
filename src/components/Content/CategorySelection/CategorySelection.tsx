@@ -21,6 +21,7 @@ const CategorySelection = ({
   handleNewCategoryID,
 }: CategorySelectionProps) => {
   const [isAnimating, setIsAnimating] = useState(false);
+
   const dotsContainerRef = useRef(null);
   const { contextSafe } = useGSAP({ scope: dotsContainerRef });
 
@@ -69,7 +70,6 @@ const CategorySelection = ({
             ),
           )}
         </DotsContainer>
-
         <Line />
       </Ellipse>
     </EllipseWrapper>
