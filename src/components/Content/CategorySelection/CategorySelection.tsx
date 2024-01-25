@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { CategorySelectionProps } from '../../../types/sliderTypes';
 import dotsPositionMapping from '../../../utils/dotsPositionsMapping';
 import { categoriesNameMapping } from '../../../utils/slidersData';
@@ -20,13 +20,16 @@ const CategorySelection = ({
   currentCategoryID,
   handleNewCategoryID,
 }: CategorySelectionProps) => {
+  const [isAnimating, setIsAnimating] = useState(false);
   const dotsContainerRef = useRef(null);
   const { contextSafe } = useGSAP({ scope: dotsContainerRef });
 
   const handleDotClick = contextSafe((id: number) => {
-    if (id === currentCategoryID) {
+    if (id === currentCategoryID || isAnimating) {
       return;
     }
+
+    setIsAnimating(true);
 
     const angleToRotate = calculateRotation(id);
 
@@ -37,6 +40,9 @@ const CategorySelection = ({
       onStart: () => {
         handleNewCategoryID(id);
         updateDotsAngles(angleToRotate);
+      },
+      onComplete: () => {
+        setIsAnimating(false);
       },
     });
   });
