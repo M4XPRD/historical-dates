@@ -54,15 +54,12 @@ export const Paragraph = styled.p`
   color: var(--colour-main);
   overflow-wrap: break-word;
 
-  max-width: 400px;
-
   @media (max-width: 1100px) and (min-height: 600px) {
     font-size: var(--fs-xs);
   }
 
   @media (max-width: 767px) {
     font-size: var(--fs-xs);
-    max-width: 170px;
   }
 
   @media (max-width: 450px) {

@@ -30,7 +30,15 @@
   transition: 0.3s all ease-in-out;
 }
 
+.swiper-slide {
+  min-width: 300px;
+}
+
+
 @media (max-width: 400px) {
+  .swiper-slide {
+    min-width: 170px;
+  }
   .swiper-slide-next {
     opacity: 0.4;
     transition: all 0.4s ease-in-out;

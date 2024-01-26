@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const YearsWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 6rem;
 
   padding-right: 5px;
   padding-bottom: 15px;
@@ -17,7 +17,7 @@ export const YearsWrapper = styled.div`
 
   @media (max-width: 1700px) {
     font-size: calc(var(--fs-xxl) - 2rem);
-    gap: 3rem;
+    gap: 5rem;
   }
 
   @media (max-width: 1400px) {
@@ -25,12 +25,19 @@ export const YearsWrapper = styled.div`
     gap: 2rem;
   }
 
+  @media (max-width: 1500px) and (min-height: 650px) {
+    font-size: calc(var(--fs-xxl) - 3rem);
+    gap: 4rem;
+  }
+
   @media (max-width: 1200px) {
     font-size: calc(var(--fs-xxl) - 4rem);
+    gap: 3rem;
   }
 
   @media (max-width: 1100px) and (min-height: 600px) {
     font-size: calc(var(--fs-xxl) - 5rem);
+    gap: 2rem;
   }
 
   @media (max-width: 1000px) {
@@ -39,10 +46,12 @@ export const YearsWrapper = styled.div`
 
   @media (max-width: 768px) {
     font-size: var(--fs-xl);
+    gap: 4.8rem;
   }
 
   @media (max-width: 600px) {
     font-size: calc(var(--fs-xl) - 1rem);
+    gap: 2rem;
   }
 
   @media (max-width: 450px) {

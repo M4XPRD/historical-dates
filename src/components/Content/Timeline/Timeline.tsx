@@ -21,7 +21,7 @@ const Timeline = ({ years, category }: TimelineProps) => {
     <Wrapper>
       <Swiper
         modules={[Navigation]}
-        spaceBetween={15}
+        spaceBetween={20}
         slidesPerView={getSlidesPerView(screenSize.width)}
         navigation={screenSize.width > 767}
       >
