@@ -14,7 +14,7 @@ export const DesktopWrapper = styled.section`
   align-self: flex-start;
   gap: 20px;
 
-  margin-left: 80px;
+  width: 100%;
 
   font-family: var(--font-family);
   color: var(--colour-main);
@@ -22,7 +22,7 @@ export const DesktopWrapper = styled.section`
   z-index: 1;
 
   @media (max-width: 767px) {
-    margin-left: 20px;
+    padding-left: 20px;
     gap: 11px;
   }
 `;

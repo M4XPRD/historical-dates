@@ -1,19 +1,24 @@
 import styled from 'styled-components';
 
-export const PaginationWrapper = styled.ul`
+export const PaginationWrapper = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 
   display: flex;
   gap: 10px;
+
+  z-index: 100;
 `;
 
-export const PaginationDot = styled.li`
+export const PaginationDot = styled.button`
+  border: none;
+
   width: 6px;
   height: 6px;
 
-  color: var(--colour-main);
+  background-color: var(--colour-main);
+  border-radius: 50%;
 
   opacity: 40%;
 
