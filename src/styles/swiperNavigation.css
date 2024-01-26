@@ -32,10 +32,11 @@
 
 .swiper-slide {
   min-width: 300px;
+  min-height: 155px;
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .swiper-slide {
     min-width: 170px;
   }
