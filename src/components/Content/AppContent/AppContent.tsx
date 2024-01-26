@@ -5,6 +5,8 @@ import useSliderLogic from '../../../hooks/useSliderLogic';
 import DatesAndCategories from '../DatesAndCategories/DatesAndCategories';
 import Wrapper from './AppContent.styled';
 import useSliderData from '../../../hooks/useSliderData';
+import useScreenSize from '../../../hooks/useScreenSize';
+import MobileCategoryTitle from '../MobileCategoryTitle/MobileCategoryTitle';
 
 const AppContent = () => {
   const {
@@ -25,6 +27,8 @@ const AppContent = () => {
     endingYear,
   } = useSliderData(currentSlide, currentCategoryID);
 
+  const { screenSize } = useScreenSize();
+
   return (
     <Wrapper>
       <Title />
@@ -34,6 +38,9 @@ const AppContent = () => {
         currentCategoryID={currentCategoryID}
         handleNewCategoryID={handleNewCategoryID}
       />
+      {screenSize.width < 768 && (
+        <MobileCategoryTitle currentCategoryID={currentCategoryID} />
+      )}
       <SliderButtons
         currentSlide={currentSlide}
         handleNextSlide={handleNextSlide}

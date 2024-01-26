@@ -29,6 +29,8 @@ export type DatesAndCategoriesProps = {
   handleNewCategoryID: (newCategoryID: number) => void,
 };
 
+export type MobileCategoryTitleProps = Pick<DatesAndCategoriesProps, 'currentCategoryID'>;
+
 export type YearsProps = Pick<DatesAndCategoriesProps, 'startingYear' | 'endingYear'>;
 
 export type CategorySelectionProps = Omit<DatesAndCategoriesProps, 'startingYear' | 'endingYear'>;
