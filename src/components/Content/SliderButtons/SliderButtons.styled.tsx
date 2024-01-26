@@ -2,6 +2,14 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.section`
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+`;
+
+export const DesktopWrapper = styled.section`
+  display: flex;
   flex-direction: column;
   align-self: flex-start;
   gap: 20px;
