@@ -6,7 +6,7 @@ import DatesAndCategories from '../DatesAndCategories/DatesAndCategories';
 import Wrapper from './AppContent.styled';
 import useSliderData from '../../../hooks/useSliderData';
 import useScreenSize from '../../../hooks/useScreenSize';
-import MobileCategoryTitle from '../MobileCategoryTitle/MobileCategoryTitle';
+import MobileCategoryTitle from '../Mobile/MobileCategoryTitle/MobileCategoryTitle';
 
 const AppContent = () => {
   const {
