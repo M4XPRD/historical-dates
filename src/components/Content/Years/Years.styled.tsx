@@ -29,6 +29,10 @@ export const YearsWrapper = styled.div`
     font-size: calc(var(--fs-xxl) - 4rem);
   }
 
+  @media (max-width: 1100px) and (min-height: 600px) {
+    font-size: calc(var(--fs-xxl) - 5rem);
+  }
+
   @media (max-width: 1000px) {
     font-size: calc(var(--fs-xxl) - 5rem);
   }

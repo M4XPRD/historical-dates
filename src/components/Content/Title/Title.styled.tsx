@@ -38,6 +38,10 @@ export const TitleText = styled.div`
     max-width: 300px;
   }
 
+  @media (max-width: 1100px) and (min-height: 600px) {
+    font-size: calc(var(--fs-l) - 1.2rem);
+  }
+
   @media (max-width: 768px) {
     margin-left: 20px;
 

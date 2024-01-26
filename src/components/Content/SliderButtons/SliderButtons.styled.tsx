@@ -14,8 +14,6 @@ export const DesktopWrapper = styled.section`
   align-self: flex-start;
   gap: 20px;
 
-  width: 100%;
-
   padding-left: 80px;
 
   font-family: var(--font-family);
@@ -47,14 +45,19 @@ export const ButtonArrow = styled.img`
   opacity: 1;
   transition: opacity 0.3s ease;
 
+  @media (max-width: 1100px) and (min-height: 600px) {
+    width: 1rem;
+    height: 1rem;
+  }
+  
   @media (max-width: 767px) {
     width: 0.6rem;
     height: 0.8rem;
   }
 
   @media (max-width: 450px) {
-    width: 0.4rem;
-    height: 0.6rem;
+    width: 6px;
+    height: 10px;
   }
 `;
 
@@ -79,6 +82,11 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #ffffff;
+  }
+
+  @media (max-width: 1100px) and (min-height: 600px) {
+    width: 40px;
+    height: 40px;
   }
 
   @media (max-width: 767px) {

@@ -23,6 +23,11 @@ export const Ellipse = styled.div`
     height: 450px;
   }
 
+  @media (max-width: 1500px) and (min-height: 650px) {
+    width: 400px;
+    height: 400px;
+  }
+
   @media (max-width: 1400px) {
     width: 400px;
     height: 400px;
@@ -31,6 +36,11 @@ export const Ellipse = styled.div`
   @media (max-width: 1200px) {
     width: 350px;
     height: 350px;
+  }
+
+  @media (max-width: 1100px) and (min-height: 600px) {
+    width: 300px;
+    height: 300px;
   }
 
   @media (max-width: 1000px) {

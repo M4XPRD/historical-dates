@@ -13,7 +13,7 @@ export const Wrapper = styled.section`
   padding-left: 80px;
   padding-right: 80px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     padding-left: 20px;
     padding-right: 0;
   }
@@ -35,6 +35,10 @@ export const CurrentYear = styled.div`
   font-weight: var(--fw-standart);
   color: var(--colour-small-date);
 
+  @media (max-width: 1100px) and (min-height: 600px) {
+    font-size: var(--fs-s);
+  }
+
   @media (max-width: 767px) {
     font-size: var(--fs-s);
   }
@@ -53,6 +57,10 @@ export const Paragraph = styled.p`
 
   max-width: 400px;
 
+  @media (max-width: 1100px) and (min-height: 600px) {
+    font-size: var(--fs-xs);
+  }
+
   @media (max-width: 767px) {
     font-size: var(--fs-xs);
     max-width: 170px;
@@ -60,6 +68,5 @@ export const Paragraph = styled.p`
 
   @media (max-width: 450px) {
     font-size: var(--fs-xxs);
-    max-width: 170px;
   }
 `;
