@@ -2,7 +2,7 @@ import AppContent from './components/Content/AppContent/AppContent';
 import Wrapper from './App.styled';
 import useScreenSize from './hooks/useScreenSize';
 import DesktopFrame from './components/Frames/DesktopFrame';
-import MobileFrame from './components/Frames/MobileFrame';
+import MobileFrame from './components/Frames/Mobile/MobileFrame';
 
 const App = () => {
   const { screenSize } = useScreenSize();
