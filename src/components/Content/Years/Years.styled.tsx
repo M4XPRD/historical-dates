@@ -16,11 +16,21 @@ export const YearsWrapper = styled.div`
   z-index: 0;
 
   @media (max-width: 1700px) {
+    font-size: calc(var(--fs-xl) - 2rem);
     gap: 3rem;
   }
 
   @media (max-width: 1400px) {
+    font-size: calc(var(--fs-xl) - 3rem);
     gap: 2rem;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: calc(var(--fs-xl) - 4rem);
+  }
+
+  @media (max-width: 1000px) {
+    font-size: calc(var(--fs-xl) - 5rem);
   }
 
   @media (max-width: 768px) {
