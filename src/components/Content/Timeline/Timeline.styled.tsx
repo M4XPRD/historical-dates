@@ -8,7 +8,6 @@ export const Wrapper = styled.section`
   flex-direction: row;
 
   width: 100%;
-  height: 150px;
 
   padding-left: 80px;
   padding-right: 80px;
