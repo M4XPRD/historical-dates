@@ -27,6 +27,7 @@ const useSliderData = (currentSlide: number, currentCategoryID: number) => {
     slidersLength,
     totalSliders,
     formattedCurrentSlide,
+    categoryKey,
     category,
     years,
     startingYear,

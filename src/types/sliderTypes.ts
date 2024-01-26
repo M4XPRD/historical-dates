@@ -18,8 +18,9 @@ export type SlidersData = {
 export type CategoryKeys = 'movies' | 'literature' | 'science' | 'music' | 'sport' | 'theater';
 
 export type TimelineProps = {
-  years: number[],
-  category: string[],
+  years: number[];
+  category: string[];
+  categoryKey: string;
 };
 
 export type DatesAndCategoriesProps = {

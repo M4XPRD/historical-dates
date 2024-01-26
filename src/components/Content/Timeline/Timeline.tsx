@@ -14,12 +14,13 @@ import {
 import useScreenSize from '../../../hooks/useScreenSize';
 import getSlidesPerView from '../../../utils/getSlidesPerView';
 
-const Timeline = ({ years, category }: TimelineProps) => {
+const Timeline = ({ years, category, categoryKey }: TimelineProps) => {
   const { screenSize } = useScreenSize();
 
   return (
     <Wrapper>
       <Swiper
+        key={categoryKey}
         modules={[Navigation]}
         spaceBetween={20}
         slidesPerView={getSlidesPerView(screenSize.width)}

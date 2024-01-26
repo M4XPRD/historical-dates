@@ -22,6 +22,7 @@ const AppContent = () => {
     totalSliders,
     formattedCurrentSlide,
     category,
+    categoryKey,
     years,
     startingYear,
     endingYear,
@@ -49,7 +50,7 @@ const AppContent = () => {
         formattedCurrentSlide={formattedCurrentSlide}
         totalSliders={totalSliders}
       />
-      <Timeline years={years} category={category} />
+      <Timeline years={years} category={category} categoryKey={categoryKey} />
     </Wrapper>
   );
 };
