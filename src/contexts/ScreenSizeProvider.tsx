@@ -7,6 +7,7 @@ const ScreenSizeProvider = ({ children }: ProviderProps) => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
+  // const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
