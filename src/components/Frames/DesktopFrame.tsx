@@ -1,8 +1,8 @@
 import {
   Wrapper, UpperBlock, VerticalBar, BottomBlock,
-} from './Frame.styled';
+} from './DesktopFrame.styled';
 
-const Frame = () => (
+const DesktopFrame = () => (
   <Wrapper>
     <UpperBlock>
       <VerticalBar />
@@ -13,4 +13,4 @@ const Frame = () => (
   </Wrapper>
 );
 
-export default Frame;
+export default DesktopFrame;

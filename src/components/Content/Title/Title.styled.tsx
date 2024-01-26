@@ -8,6 +8,10 @@ export const Wrapper = styled.section`
   gap: 78px;
 
   margin-top: 61px;
+
+  @media (max-width: 767px) {
+    margin-top: 0;
+  }
 `;
 
 export const VerticalColouredBar = styled.img`
@@ -20,17 +24,23 @@ export const TitleText = styled.div`
 
   line-height: 67px;
   font-family: var(--font-family);
-  font-size: var(--fs-m);
+  font-size: var(--fs-l);
   font-weight: var(--fw-bold);
   color: var(--colour-main);
 
   @media (max-width: 1500px) {
-    font-size: calc(var(--fs-m) - 0.5rem);
+    font-size: calc(var(--fs-l) - 0.5rem);
     max-width: 300px;
   }
 
   @media (max-width: 1300px) {
-    font-size: calc(var(--fs-m) - 1rem);
+    font-size: calc(var(--fs-l) - 1rem);
     max-width: 300px;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 20px;
+
+    font-size: var(--fs-s);
   }
 `;

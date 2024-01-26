@@ -9,6 +9,19 @@ const Wrapper = styled.main`
   align-items: center;
   width: 76%;
   height: 100%;
+
+  @media (max-width: 767px) {
+    width: 100%;
+
+    justify-content: space-around;
+
+    & > :nth-child(3) {
+      order: 2;
+    }
+    & > :nth-child(4) {
+      order: 1;
+    }
+  }
 `;
 
 export default Wrapper;

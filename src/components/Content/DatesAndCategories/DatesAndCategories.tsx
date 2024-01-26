@@ -1,3 +1,4 @@
+import useScreenSize from '../../../hooks/useScreenSize';
 import { DatesAndCategoriesProps } from '../../../types/sliderTypes';
 import CategorySelection from '../CategorySelection/CategorySelection';
 import Years from '../Years/Years';
@@ -8,14 +9,20 @@ const DatesAndCategories = ({
   endingYear,
   currentCategoryID,
   handleNewCategoryID,
-}: DatesAndCategoriesProps) => (
-  <Wrapper>
-    <Years startingYear={startingYear} endingYear={endingYear} />
-    <CategorySelection
-      currentCategoryID={currentCategoryID}
-      handleNewCategoryID={handleNewCategoryID}
-    />
-  </Wrapper>
-);
+}: DatesAndCategoriesProps) => {
+  const { screenSize } = useScreenSize();
+
+  return (
+    <Wrapper>
+      <Years startingYear={startingYear} endingYear={endingYear} />
+      {screenSize.width > 767 && (
+      <CategorySelection
+        currentCategoryID={currentCategoryID}
+        handleNewCategoryID={handleNewCategoryID}
+      />
+      )}
+    </Wrapper>
+  );
+};
 
 export default DatesAndCategories;

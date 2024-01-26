@@ -61,7 +61,7 @@ export const DotText = styled.span`
   padding-left: 194px;
 
   color: var(--colour-main);
-  font-size: var(--fs-xs);
+  font-size: var(--fs-s);
 
   pointer-events: none;
 `;
@@ -83,7 +83,7 @@ export const DotCircle = styled.div`
   border: 1px solid var(--colour-dot);
   border-radius: 50%;
 
-  font-size: var(--fs-xs);
+  font-size: var(--fs-s);
   color: var(--colour-main);
 
   opacity: 0;

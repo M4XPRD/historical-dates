@@ -8,6 +8,7 @@ export const YearsWrapper = styled.div`
   padding-right: 5px;
   padding-bottom: 15px;
 
+  font-size: var(--fs-xl);
   color: var(--colour-date-from);
   letter-spacing: -0.02em;
   max-height: 160px;
@@ -20,6 +21,10 @@ export const YearsWrapper = styled.div`
 
   @media (max-width: 1400px) {
     gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--fs-l);
   }
 `;
 

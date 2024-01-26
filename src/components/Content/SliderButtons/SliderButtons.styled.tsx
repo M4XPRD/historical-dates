@@ -12,6 +12,11 @@ export const Wrapper = styled.section`
   color: var(--colour-main);
 
   z-index: 1;
+
+  @media (max-width: 767px) {
+    margin-left: 20px;
+    gap: 11px;
+  }
 `;
 
 export const CurrentSlider = styled.div`
@@ -22,11 +27,20 @@ export const ButtonsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
+
+  @media (max-width: 767px) {
+    gap: 8.33px;
+  }
 `;
 
 export const ButtonArrow = styled.img`
   opacity: 1;
   transition: opacity 0.3s ease;
+
+  @media (max-width: 767px) {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -41,6 +55,7 @@ export const Button = styled.button`
   border: 1px solid rgba(66, 86, 122, 0.1);
   background-color: transparent;
 
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 
   &:disabled ${ButtonArrow} {
@@ -49,5 +64,10 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #ffffff;
+  }
+
+  @media (max-width: 767px) {
+    width: 25px;
+    height: 25px;
   }
 `;

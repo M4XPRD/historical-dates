@@ -11,6 +11,10 @@ const Wrapper = styled.div`
     height: 100svh;
 
     user-select: none;
+
+    @media (max-width: 767px) {
+      width: 100%
+    }
   `;
 
 export default Wrapper;

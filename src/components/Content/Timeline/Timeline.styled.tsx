@@ -12,6 +12,12 @@ export const Wrapper = styled.section`
 
   padding-left: 80px;
   padding-right: 80px;
+
+  @media (max-width: 767px) {
+    padding-left: 20px;
+    padding-right: 0;
+    padding-top: 25px;
+  }
 `;
 
 export const EventWrapper = styled.article`
@@ -26,14 +32,26 @@ export const EventWrapper = styled.article`
 
 export const CurrentYear = styled.div`
   font-family: var(--font-family-secondary);
-  font-size: var(--fs-s);
+  font-size: var(--fs-m);
   font-weight: var(--fw-standart);
   color: var(--colour-small-date);
+
+  @media (max-width: 767px) {
+    font-size: var(--fs-xs);
+  }
 `;
 
 export const Paragraph = styled.p`
   font-family: var(--font-family);
-  font-size: var(--fs-xs);
+  font-size: var(--fs-s);
   font-weight: var(--fw-standart);
   color: var(--colour-main);
+  overflow-wrap: break-word;
+
+  max-width: 400px;
+
+  @media (max-width: 767px) {
+    font-size: var(--fs-xxs);
+    max-width: 170px;
+  }
 `;
