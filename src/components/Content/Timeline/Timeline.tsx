@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import { TimelineProps } from '../../../types/sliderTypes';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -19,10 +19,7 @@ const Timeline = ({ years, category }: TimelineProps) => {
   return (
     <Wrapper>
       <Swiper
-        modules={[Navigation, Pagination]}
-        pagination={screenSize.width < 768 ? {
-          clickable: true,
-        } : false}
+        modules={[Navigation]}
         spaceBetween={10}
         slidesPerView={screenSize.width < 900 ? 2 : 3}
         navigation={screenSize.width > 767}
