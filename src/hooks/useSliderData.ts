@@ -10,6 +10,7 @@ const useSliderData = (currentSlide: number, currentCategoryID: number) => {
   );
 
   const slidersLength = slidersData.length;
+
   const totalSliders = formatSlidersCount(slidersLength);
   const formattedCurrentSlide = formatSlidersCount(currentSlide);
 
