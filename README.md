@@ -70,7 +70,7 @@ $ make y-start
 
 [Деплой](https://bit.ly/historical-dates-m4xprd) приложения.
 
-![historical-dates-gif](https://github.com/M4XPRD/historical-dates/assets/86636158/bc60e95e-04a3-4fb4-8e9a-441a81efbfba)
+![historical-dates-gif](https://github.com/M4XPRD/historical-dates/assets/86636158/25b1902e-d03f-46f8-a598-130a37210186)
 
 ### Что получилось в итоге:
    - Приложение построено в стеке `React` + `TypeScript`
