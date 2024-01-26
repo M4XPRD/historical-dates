@@ -12,6 +12,7 @@ import {
   Paragraph,
 } from './Timeline.styled';
 import useScreenSize from '../../../hooks/useScreenSize';
+import getSlidesPerView from '../../../utils/getSlidesPerView';
 
 const Timeline = ({ years, category }: TimelineProps) => {
   const { screenSize } = useScreenSize();
@@ -21,7 +22,7 @@ const Timeline = ({ years, category }: TimelineProps) => {
       <Swiper
         modules={[Navigation]}
         spaceBetween={15}
-        slidesPerView={screenSize.width < 400 ? 2 : 3}
+        slidesPerView={getSlidesPerView(screenSize.width)}
         navigation={screenSize.width > 767}
       >
         {years.map((year: number, index: number) => (
