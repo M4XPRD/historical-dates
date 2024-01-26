@@ -13,12 +13,10 @@ const Wrapper = styled.main`
   @media (max-width: 767px) {
     width: 100%;
 
-    justify-content: space-around;
-
-    & > :nth-child(3) {
+    & > :nth-child(4) {
       order: 2;
     }
-    & > :nth-child(4) {
+    & > :nth-child(5) {
       order: 1;
     }
   }
