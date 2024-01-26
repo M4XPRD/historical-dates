@@ -36,6 +36,10 @@ export const YearsWrapper = styled.div`
   @media (max-width: 768px) {
     font-size: var(--fs-l);
   }
+
+  @media (max-width: 310px) {
+    font-size: calc(var(--fs-l) - 0.5rem);
+  }
 `;
 
 export const YearFrom = styled.div`
