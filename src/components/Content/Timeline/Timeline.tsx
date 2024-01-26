@@ -20,8 +20,8 @@ const Timeline = ({ years, category }: TimelineProps) => {
     <Wrapper>
       <Swiper
         modules={[Navigation]}
-        spaceBetween={10}
-        slidesPerView={screenSize.width < 900 ? 2 : 3}
+        spaceBetween={15}
+        slidesPerView={screenSize.width < 400 ? 2 : 3}
         navigation={screenSize.width > 767}
       >
         {years.map((year: number, index: number) => (

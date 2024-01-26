@@ -16,6 +16,8 @@ export const DesktopWrapper = styled.section`
 
   width: 100%;
 
+  padding-left: 80px;
+
   font-family: var(--font-family);
   color: var(--colour-main);
 
@@ -46,8 +48,13 @@ export const ButtonArrow = styled.img`
   transition: opacity 0.3s ease;
 
   @media (max-width: 767px) {
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.6rem;
+    height: 0.8rem;
+  }
+
+  @media (max-width: 450px) {
+    width: 0.4rem;
+    height: 0.6rem;
   }
 `;
 
@@ -75,6 +82,11 @@ export const Button = styled.button`
   }
 
   @media (max-width: 767px) {
+    width: 35px;
+    height: 35px;
+  }
+
+  @media (max-width: 450px) {
     width: 25px;
     height: 25px;
   }

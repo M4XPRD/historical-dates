@@ -41,6 +41,10 @@ export const TitleText = styled.div`
   @media (max-width: 768px) {
     margin-left: 20px;
 
+    font-size: var(--fs-m);
+  }
+
+  @media (max-width: 450px) {
     font-size: var(--fs-s);
   }
 `;

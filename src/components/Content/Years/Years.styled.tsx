@@ -8,7 +8,7 @@ export const YearsWrapper = styled.div`
   padding-right: 5px;
   padding-bottom: 15px;
 
-  font-size: var(--fs-xl);
+  font-size: var(--fs-xxl);
   color: var(--colour-date-from);
   letter-spacing: -0.02em;
   max-height: 160px;
@@ -16,24 +16,32 @@ export const YearsWrapper = styled.div`
   z-index: 0;
 
   @media (max-width: 1700px) {
-    font-size: calc(var(--fs-xl) - 2rem);
+    font-size: calc(var(--fs-xxl) - 2rem);
     gap: 3rem;
   }
 
   @media (max-width: 1400px) {
-    font-size: calc(var(--fs-xl) - 3rem);
+    font-size: calc(var(--fs-xxl) - 3rem);
     gap: 2rem;
   }
 
   @media (max-width: 1200px) {
-    font-size: calc(var(--fs-xl) - 4rem);
+    font-size: calc(var(--fs-xxl) - 4rem);
   }
 
   @media (max-width: 1000px) {
-    font-size: calc(var(--fs-xl) - 5rem);
+    font-size: calc(var(--fs-xxl) - 5rem);
   }
 
   @media (max-width: 768px) {
+    font-size: var(--fs-xl);
+  }
+
+  @media (max-width: 600px) {
+    font-size: calc(var(--fs-xl) - 1rem);
+  }
+
+  @media (max-width: 450px) {
     font-size: var(--fs-l);
   }
 

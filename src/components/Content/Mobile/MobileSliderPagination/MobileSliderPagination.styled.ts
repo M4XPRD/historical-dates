@@ -14,8 +14,8 @@ export const PaginationWrapper = styled.div`
 export const PaginationDot = styled.button`
   border: none;
 
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
 
   background-color: var(--colour-main);
   border-radius: 50%;
@@ -27,5 +27,10 @@ export const PaginationDot = styled.button`
   &.active {
     opacity: 1;
     transition: all 0.3s ease-out;
+  }
+
+  @media (max-width: 450px) {
+    width: 6px;
+    height: 6px;
   }
 `;
