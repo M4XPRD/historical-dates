@@ -16,13 +16,15 @@
   --colour-main: #42567A;
   --colour-dot: #303e5880;
   --colour-background: #F4F5F9;
+  --colour-mobile-border: #C7CDD9;
   --font-family: 'PT Sans', sans-serif;
   --font-family-secondary: 'Bebas Neue', sans-serif;
   --fw-standart: 400;
   --fw-bold: 700;
   --fs-xxs: 14px;
-  --fs-xs: 20px;
-  --fs-s: 25px;
-  --fs-m: 56px;
-  --fs-l: 200px;
+  --fs-xs: 16x;
+  --fs-s: 20px;
+  --fs-m: 25px;
+  --fs-l: 56px;
+  --fs-xl: 200px;
 }
