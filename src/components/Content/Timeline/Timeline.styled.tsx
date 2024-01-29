@@ -52,7 +52,7 @@ export const Paragraph = styled.p`
   font-size: var(--fs-s);
   font-weight: var(--fw-standart);
   color: var(--colour-main);
-  overflow-wrap: break-word;
+  hyphens: auto;
 
   @media (max-width: 1100px) and (min-height: 600px) {
     font-size: var(--fs-xs);
